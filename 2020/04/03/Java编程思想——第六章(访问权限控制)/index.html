@@ -23,19 +23,19 @@
   <meta name="description" content="第六章(访问权限控制)的概括总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java编程思想——第六章(访问权限控制)">
-<meta property="og:url" content="http://yoursite.com/2020/04/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0(%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%B8%85%E7%90%86)/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/04/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AB%A0(%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6)/index.html">
 <meta property="og:site_name" content="BlOW">
 <meta property="og:description" content="第六章(访问权限控制)的概括总结">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-03T13:02:22.000Z">
-<meta property="article:modified_time" content="2020-04-03T13:19:05.203Z">
+<meta property="article:modified_time" content="2020-04-09T13:44:05.669Z">
 <meta property="article:author" content="OlWician Chen">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="基础知识">
 <meta property="article:tag" content="书籍">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0(%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%B8%85%E7%90%86)/">
+<link rel="canonical" href="http://yoursite.com/2020/04/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AB%A0(%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6)/">
 
 
 <script id="page-configurations">
@@ -118,7 +118,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">8</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -186,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0(%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%B8%85%E7%90%86)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AB%A0(%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -208,10 +208,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-03 21:02:22 / 修改时间：21:19:05" itemprop="dateCreated datePublished" datetime="2020-04-03T21:02:22+08:00">2020-04-03</time>
+              <time title="创建时间：2020-04-03 21:02:22" itemprop="dateCreated datePublished" datetime="2020-04-03T21:02:22+08:00">2020-04-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-09 21:44:05" itemprop="dateModified" datetime="2020-04-09T21:44:05+08:00">2020-04-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -250,17 +256,17 @@
 <blockquote>
 <p>访问控制（或隐藏具体实现）与“最初的实现并不恰当”有关</p>
 </blockquote>
-<h3 id="包：库单元"><a href="#包：库单元" class="headerlink" title="包：库单元"></a>包：库单元</h3><blockquote>
+<h1 id="包：库单元"><a href="#包：库单元" class="headerlink" title="包：库单元"></a>包：库单元</h1><blockquote>
 <p>问：为什么设置控制访问<br>   答：1.使用户不触碰不该触碰的部分。2.更改内部实现，不影响客户端程序员。</p>
 </blockquote>
 <p>当编写一个Java源代码文件时，此文件通常被称为<strong>编译单元（或称为转译单元）</strong>。每个编译单元都必须有一个后缀名<font><strong>.java</strong></font>，而编译单元内可以有一个public类，其名称必须与文件的名称相同。<strong>每个编译单元只能有一个public类</strong>，否则编译器就不会接受。如果在该编译单元之外还有额外的类话，那么在包之外的世界无法看见这些类，这时因为它们不是public类，而且它们<strong>主要用来为主public类提供支持</strong>。</p>
-<h3 id="代码组织"><a href="#代码组织" class="headerlink" title="代码组织"></a>代码组织</h3><p>当编译一个.java文件时，在.java文件中的每个类都会有一个输出文件，其名称与类名称相同，后缀名是<font><strong>.class</strong>。所以，编译少量.java文件之后，往往后得到大量的.class文件。</p>
+<h1 id="代码组织"><a href="#代码组织" class="headerlink" title="代码组织"></a>代码组织</h1><p>当编译一个.java文件时，在.java文件中的每个类都会有一个输出文件，其名称与类名称相同，后缀名是<font><strong>.class</strong>。所以，编译少量.java文件之后，往往后得到大量的.class文件。</p>
 <blockquote>
 <p>使用编译型语言编写程序，编译器会产生一个中间文件（通常是<strong>obj文件</strong>），然后再与通过<strong>链接器</strong>（用以创建一个可执行文件）或<strong>类库产生器</strong>（librarian，用以创建一个类库）产生的其他同类文件捆绑在一起。</p>
 </blockquote>
 <p>而Java可运行程序是一组可以打包并压缩为一个<strong>Java文档文件</strong>（JAR，使用Java的jar文档生成器）的.class文件，<strong>Java解释器负责这些文件的查找、装载和解释</strong>。</p>
 <p><strong>务必牢记：package和import关键字允许你做的，是将单一的全局名字空间分割开。</strong></p>
-<h3 id="创建独一无二的包名"><a href="#创建独一无二的包名" class="headerlink" title="创建独一无二的包名"></a>创建独一无二的包名</h3><p><strong>Java解释器的运行过程</strong></p>
+<h1 id="创建独一无二的包名"><a href="#创建独一无二的包名" class="headerlink" title="创建独一无二的包名"></a>创建独一无二的包名</h1><p><strong>Java解释器的运行过程</strong></p>
 <ol>
 <li>找出环境变量<strong>CLASSPATH</strong>（涉及环境变量需大写），作为根目录</li>
 <li>获取包的名称并将句点转换成反斜杠，以<strong>CLASSPATH</strong>跟中产生一个路径名称（package foo.bar.baz 变成为 foo\bar\baz 或 foo/ bar/baz 或其他，这取决于操作系统）</li>
@@ -268,17 +274,17 @@
 </ol>
 <p><strong>建议：package名称的第一部分是创建者反顺序的Internet域名，第二部分是一个目录名。</strong><br><code>cn.olwician.MindView</code></p>
 <p><strong>注意：对于从包中导入的类以及要使用的方法都必须是public的。</strong></p>
-<h3 id="定制工具库"><a href="#定制工具库" class="headerlink" title="定制工具库"></a>定制工具库</h3><p>可以创建一些<strong>自己的工具库</strong>减少重复的程序代码</p>
-<h3 id="Java访问权限修饰词"><a href="#Java访问权限修饰词" class="headerlink" title="Java访问权限修饰词"></a>Java访问权限修饰词</h3><p>不提供任何访问权限修饰词，则意味着它是<font><strong>“包访问权限”(default或friendly</strong>)。<br>无论如何，<strong>所有事物都具有某种形式的访问权限控制</strong>。</p>
-<h4 id="取得成员的访问权的途径"><a href="#取得成员的访问权的途径" class="headerlink" title="取得成员的访问权的途径"></a>取得成员的访问权的途径</h4><ol>
+<h1 id="定制工具库"><a href="#定制工具库" class="headerlink" title="定制工具库"></a>定制工具库</h1><p>可以创建一些<strong>自己的工具库</strong>减少重复的程序代码</p>
+<h1 id="Java访问权限修饰词"><a href="#Java访问权限修饰词" class="headerlink" title="Java访问权限修饰词"></a>Java访问权限修饰词</h1><p>不提供任何访问权限修饰词，则意味着它是<font><strong>“包访问权限”(default或friendly</strong>)。<br>无论如何，<strong>所有事物都具有某种形式的访问权限控制</strong>。</p>
+<h2 id="取得成员的访问权的途径"><a href="#取得成员的访问权的途径" class="headerlink" title="取得成员的访问权的途径"></a>取得成员的访问权的途径</h2><ol>
 <li>使该成员成为<strong>public</strong></li>
 <li>通过不加访问权限修饰词将其他类放置于同一个包内，包内的其他类就能够访问该成员了。</li>
 <li>使用继承技术，继承类能够访问<strong>public</strong>成员也能访问<strong>protected</strong>成员。</li>
 <li>提供访问器（<strong>accessor</strong>）和变异器（<strong>mutator</strong>）方法（<strong>也称作get/set方法</strong>），以读取和改变数值，<strong>对OOP而言，这是最优雅的方式。</strong></li>
 </ol>
-<h4 id="默认包"><a href="#默认包" class="headerlink" title="默认包"></a>默认包</h4><p>两个处于同目录下的类能够互相调用，原因是它们同处于<strong>相同的目录并且没有给自己设定任何包名称</strong>，于是Java将这样的文件自动看作是隶属于该目录的默认包之中。</p>
-<h3 id="类的访问权限"><a href="#类的访问权限" class="headerlink" title="类的访问权限"></a>类的访问权限</h3><p><strong>类的访问权限只有两个</strong>：包访问权限或public</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<h2 id="默认包"><a href="#默认包" class="headerlink" title="默认包"></a>默认包</h2><p>两个处于同目录下的类能够互相调用，原因是它们同处于<strong>相同的目录并且没有给自己设定任何包名称</strong>，于是Java将这样的文件自动看作是隶属于该目录的默认包之中。</p>
+<h1 id="类的访问权限"><a href="#类的访问权限" class="headerlink" title="类的访问权限"></a>类的访问权限</h1><p><strong>类的访问权限只有两个</strong>：包访问权限或public</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote>
 <p>据估计，用C语言开发项目，在50千行至100千行之间就会出现问题，这是因为C语言仅有单一的“名字空间”，并且名称开始发生冲突，引发额外的管理开销。而对于Java，关键字package、包的命名模式和关键字import，可以使你对名称进行完全的控制，因此名称冲突的问题是很容易避免的。</p>
 </blockquote>
 <blockquote>
@@ -299,7 +305,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/04/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0(%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%B8%85%E7%90%86)/" title="Java编程思想——第六章(访问权限控制)">http://yoursite.com/2020/04/03/Java编程思想——第五章(初始化与清理)/</a>
+    <a href="http://yoursite.com/2020/04/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AB%A0(%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6)/" title="Java编程思想——第六章(访问权限控制)">http://yoursite.com/2020/04/03/Java编程思想——第六章(访问权限控制)/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -321,10 +327,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/30/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AB%A0(%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6)/" rel="prev" title="Java编程思想——第五章(初始化与清理)">
+    <a href="/2020/03/30/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0(%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%B8%85%E7%90%86)/" rel="prev" title="Java编程思想——第五章(初始化与清理)">
       <i class="fa fa-chevron-left"></i> Java编程思想——第五章(初始化与清理)
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/06/(Python)%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81exe/" rel="next" title="(Python)凯撒密码exe">
+      (Python)凯撒密码exe <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -384,7 +393,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#包：库单元"><span class="nav-number">1.</span> <span class="nav-text">包：库单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码组织"><span class="nav-number">2.</span> <span class="nav-text">代码组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建独一无二的包名"><span class="nav-number">3.</span> <span class="nav-text">创建独一无二的包名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定制工具库"><span class="nav-number">4.</span> <span class="nav-text">定制工具库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java访问权限修饰词"><span class="nav-number">5.</span> <span class="nav-text">Java访问权限修饰词</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#取得成员的访问权的途径"><span class="nav-number">5.1.</span> <span class="nav-text">取得成员的访问权的途径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认包"><span class="nav-number">5.2.</span> <span class="nav-text">默认包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类的访问权限"><span class="nav-number">6.</span> <span class="nav-text">类的访问权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#包：库单元"><span class="nav-number">1.</span> <span class="nav-text">包：库单元</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码组织"><span class="nav-number">2.</span> <span class="nav-text">代码组织</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建独一无二的包名"><span class="nav-number">3.</span> <span class="nav-text">创建独一无二的包名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定制工具库"><span class="nav-number">4.</span> <span class="nav-text">定制工具库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java访问权限修饰词"><span class="nav-number">5.</span> <span class="nav-text">Java访问权限修饰词</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#取得成员的访问权的途径"><span class="nav-number">5.1.</span> <span class="nav-text">取得成员的访问权的途径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认包"><span class="nav-number">5.2.</span> <span class="nav-text">默认包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类的访问权限"><span class="nav-number">6.</span> <span class="nav-text">类的访问权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -400,7 +409,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -413,7 +422,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

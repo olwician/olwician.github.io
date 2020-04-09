@@ -28,7 +28,7 @@
 <meta property="og:description" content="第三章(操作符)的概括总结">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-25T12:27:43.000Z">
-<meta property="article:modified_time" content="2020-03-25T12:40:09.498Z">
+<meta property="article:modified_time" content="2020-04-09T13:37:50.591Z">
 <meta property="article:author" content="OlWician Chen">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="基础知识">
@@ -118,7 +118,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">8</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -208,10 +208,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-25 20:27:43 / 修改时间：20:40:09" itemprop="dateCreated datePublished" datetime="2020-03-25T20:27:43+08:00">2020-03-25</time>
+              <time title="创建时间：2020-03-25 20:27:43" itemprop="dateCreated datePublished" datetime="2020-03-25T20:27:43+08:00">2020-03-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-09 21:37:50" itemprop="dateModified" datetime="2020-04-09T21:37:50+08:00">2020-04-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -250,21 +256,21 @@
 <blockquote>
 <p>在最底层，<strong>Java中的数据是通过使用操作符</strong>来操作的。</p>
 </blockquote>
-<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><pre><code>在为对象赋值时，实际上是把引用从一个地方复制到另一个地方
-假设对对象c、d使用c = d,那么c和d都将指向原来只有d指向的那个对象。</code></pre><h3 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Equivalence</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n1 = <span class="number">47</span>;</span><br><span class="line">		<span class="keyword">int</span> n2 = <span class="number">47</span>;</span><br><span class="line">		<span class="comment">//System.out.println(equals(n1,n2));</span></span><br><span class="line">		System.out.println(n1 != n2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Output:</span></span><br><span class="line"><span class="comment"> * false</span></span><br><span class="line"><span class="comment"> * true</span></span><br><span class="line"><span class="comment"> */</span><span class="comment">//:~</span></span><br></pre></td></tr></table></figure>
+<h1 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h1><pre><code>在为对象赋值时，实际上是把引用从一个地方复制到另一个地方
+假设对对象c、d使用c = d,那么c和d都将指向原来只有d指向的那个对象。</code></pre><h1 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Equivalence</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n1 = <span class="number">47</span>;</span><br><span class="line">		<span class="keyword">int</span> n2 = <span class="number">47</span>;</span><br><span class="line">		<span class="comment">//System.out.println(equals(n1,n2));</span></span><br><span class="line">		System.out.println(n1 != n2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Output:</span></span><br><span class="line"><span class="comment"> * false</span></span><br><span class="line"><span class="comment"> * true</span></span><br><span class="line"><span class="comment"> */</span><span class="comment">//:~</span></span><br></pre></td></tr></table></figure>
 
 <p>尽管对象的内容相同，然而对象的引用确实不同的，而==和!=比较的就是<strong>对象的引用</strong>。<br>比较对象的实际内容是否相同，需使用特殊方法<strong>equals()</strong>，但是基本类型直接使用==和!=即可，<strong>基本类型不适用与equals()</strong>。</p>
-<h3 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h3><p><strong>短路</strong>：一旦能够明确无误地确定整个表达式的值，就不再计算表达式余下部分了。<br><code>test1(0) &amp;&amp; test2(2) &amp;&amp; test3(2)</code></p>
+<h1 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h1><p><strong>短路</strong>：一旦能够明确无误地确定整个表达式的值，就不再计算表达式余下部分了。<br><code>test1(0) &amp;&amp; test2(2) &amp;&amp; test3(2)</code></p>
 <p>当test(0)的结果为false，即可判断出这个式子的结果为false，所以余下的test2(2)和test3(2)均不会计算。</p>
-<pre><code>事实上，如果所有的逻辑表达式都有一部分不必计算，那将获得潜在的性能提升。</code></pre><h3 id="直接常量"><a href="#直接常量" class="headerlink" title="直接常量"></a>直接常量</h3><p>通过使用Integer和Long类的静态方法<font><strong>toBinaryString()</strong></font>可以容易实现将<strong>十六进制</strong>和<strong>八进制</strong>数字以<strong>二进制</strong>形式显示。</p>
-<h3 id="按位操作符"><a href="#按位操作符" class="headerlink" title="按位操作符"></a>按位操作符</h3><blockquote>
+<pre><code>事实上，如果所有的逻辑表达式都有一部分不必计算，那将获得潜在的性能提升。</code></pre><h1 id="直接常量"><a href="#直接常量" class="headerlink" title="直接常量"></a>直接常量</h1><p>通过使用Integer和Long类的静态方法<font><strong>toBinaryString()</strong></font>可以容易实现将<strong>十六进制</strong>和<strong>八进制</strong>数字以<strong>二进制</strong>形式显示。</p>
+<h1 id="按位操作符"><a href="#按位操作符" class="headerlink" title="按位操作符"></a>按位操作符</h1><blockquote>
 <p>按位操作符来源于<strong>C语言面向底层</strong>的操作，在这种操作中经常需要直接操纵硬件，设置<strong>硬件寄存器内的二进制位</strong>，而Java的设计初衷是<strong>嵌入电视机机顶盒</strong>，于是这种面向底层的操作仍被保留了下来。</p>
 </blockquote>
-<h3 id="类型转换操作符"><a href="#类型转换操作符" class="headerlink" title="类型转换操作符"></a>类型转换操作符</h3><p>通常，表达式中出现的<strong>最大的数据类型</strong>决定了表达式最终结果的数据类型.</p>
+<h1 id="类型转换操作符"><a href="#类型转换操作符" class="headerlink" title="类型转换操作符"></a>类型转换操作符</h1><p>通常，表达式中出现的<strong>最大的数据类型</strong>决定了表达式最终结果的数据类型.</p>
 <blockquote>
 <p>如果将一个Float值与一个double值想成，结果就是<strong>double</strong>；如果将一个int和一个long值相加，则结果为<strong>long</strong>。</p>
 </blockquote>
-<h3 id="Java没有sizeof"><a href="#Java没有sizeof" class="headerlink" title="Java没有sizeof"></a>Java没有sizeof</h3><p>C和C++中，sizeof()操作符可以告诉你为数据项分配的字节数，使用sizeof()的最大原因是为了“移植”，因为<strong>不同的数据类型在不同的机器上可能有不同的大小。</strong><br>Java不需要sizeof()，因为所有数据类型在<strong>所有机器中的大小都是相同的</strong>，它已经被设计在语言中了。</p>
+<h1 id="Java没有sizeof"><a href="#Java没有sizeof" class="headerlink" title="Java没有sizeof"></a>Java没有sizeof</h1><p>C和C++中，sizeof()操作符可以告诉你为数据项分配的字节数，使用sizeof()的最大原因是为了“移植”，因为<strong>不同的数据类型在不同的机器上可能有不同的大小。</strong><br>Java不需要sizeof()，因为所有数据类型在<strong>所有机器中的大小都是相同的</strong>，它已经被设计在语言中了。</p>
 
     </div>
 
@@ -368,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值"><span class="nav-number">1.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系操作符"><span class="nav-number">2.</span> <span class="nav-text">关系操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑操作符"><span class="nav-number">3.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接常量"><span class="nav-number">4.</span> <span class="nav-text">直接常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按位操作符"><span class="nav-number">5.</span> <span class="nav-text">按位操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换操作符"><span class="nav-number">6.</span> <span class="nav-text">类型转换操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java没有sizeof"><span class="nav-number">7.</span> <span class="nav-text">Java没有sizeof</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#赋值"><span class="nav-number">1.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系操作符"><span class="nav-number">2.</span> <span class="nav-text">关系操作符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑操作符"><span class="nav-number">3.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#直接常量"><span class="nav-number">4.</span> <span class="nav-text">直接常量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#按位操作符"><span class="nav-number">5.</span> <span class="nav-text">按位操作符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型转换操作符"><span class="nav-number">6.</span> <span class="nav-text">类型转换操作符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java没有sizeof"><span class="nav-number">7.</span> <span class="nav-text">Java没有sizeof</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -384,7 +390,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -397,7 +403,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
