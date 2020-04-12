@@ -28,7 +28,7 @@
 <meta property="og:description" content="第七章(复用类)的概括总结">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-09T13:45:59.000Z">
-<meta property="article:modified_time" content="2020-04-09T14:10:35.640Z">
+<meta property="article:modified_time" content="2020-04-12T14:10:04.241Z">
 <meta property="article:author" content="OlWician Chen">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="基础知识">
@@ -118,7 +118,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -208,10 +208,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-09 21:45:59 / 修改时间：22:10:35" itemprop="dateCreated datePublished" datetime="2020-04-09T21:45:59+08:00">2020-04-09</time>
+              <time title="创建时间：2020-04-09 21:45:59" itemprop="dateCreated datePublished" datetime="2020-04-09T21:45:59+08:00">2020-04-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-12 22:10:04" itemprop="dateModified" datetime="2020-04-12T22:10:04+08:00">2020-04-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -246,31 +252,47 @@
 <p>第七章(复用类)的概括总结</p>
 </blockquote>
 <a id="more"></a>
-<hr>
+<hr />
 <blockquote>
 <p>复用代码是Java众多引人注目的功能之一。但想要成为极具革命性的语言，仅仅能够复制代码并对之加以改变是不够的的，它还必须能够做更多的事情。</p>
 </blockquote>
-<h1 id="组合语法"><a href="#组合语法" class="headerlink" title="组合语法"></a>组合语法</h1><p>有一个方法很特殊：<strong>toString()</strong>。每一个<strong>非基本类型的对象</strong>都会有一个toString()方法，当编译器需要一个String而你却只有一个对象时，这个方法便会被调用。</p>
+<h1 id="组合语法"><a class="markdownIt-Anchor" href="#组合语法"></a> 组合语法</h1>
+<p>有一个方法很特殊：<strong>toString()</strong>。每一个<strong>非基本类型的对象</strong>都会有一个toString()方法，当编译器需要一个String而你却只有一个对象时，这个方法便会被调用。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Engine</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String s;</span><br><span class="line">    Engine() &#123;</span><br><span class="line">        println(<span class="string">"Engine()"</span>);</span><br><span class="line">        s = <span class="string">"Constructed"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> s; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AirPlane</span></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">Engine N1 = <span class="keyword">new</span> AirPlane();</span><br><span class="line">System.out.println(N1);</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="comment">//:output:Constructed</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="继承语法"><a href="#继承语法" class="headerlink" title="继承语法"></a>继承语法</h1><p><strong>继承是所有OOP语言不可缺少的组成部分</strong>。当创建一个类时，总是在继承，因此，除非已明确指出要从其他类中继承， 否则就是在隐式地从Java的标准根类<strong>Object</strong>进行继承。</p>
+<h1 id="继承语法"><a class="markdownIt-Anchor" href="#继承语法"></a> 继承语法</h1>
+<p><strong>继承是所有OOP语言不可缺少的组成部分</strong>。当创建一个类时，总是在继承，因此，除非已明确指出要从其他类中继承， 否则就是在隐式地从Java的标准根类<strong>Object</strong>进行继承。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cleanser</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//....</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Detergent</span> <span class="keyword">extends</span> <span class="title">Cleanser</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//....</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>即使是一个程序中含有多个类，也只有<strong>命令行所调用的那个类的main()方法</strong>会被调用。因此，在此例中，如果命令行是java Detergent，那么Detergent.main()将会被调用，而即使Cleanser不是一个public类，如果命令行是java Cleanser，那么Cleanser.main()仍然会被调用。<br><strong>即使一个类只具有包访问权限，其public main()仍然是可访问的。</strong><br>继承的一般规则是所有的<strong>数据成员都指定为private</strong>，而所有的<strong>方法指定为public</strong>。</p>
-<pre><code>super.fiction()即调用基类版本的fiction()方法。</code></pre><h2 id="初始化基类"><a href="#初始化基类" class="headerlink" title="初始化基类"></a>初始化基类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Art</span></span>&#123;</span><br><span class="line">    Art()&#123; print(<span class="string">"Art constructor"</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Drawing</span> <span class="keyword">extends</span> <span class="title">Art</span></span>&#123;</span><br><span class="line">    Drawing()&#123; print(<span class="string">"Drawing constructor"</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cartoon</span> <span class="keyword">extends</span> <span class="title">Drawing</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cartoon</span><span class="params">()</span></span>&#123;print(<span class="string">"Cartoon constructor"</span>);&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Cartoon x = <span class="keyword">new</span> Cartoon();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">/* Output:</span></span><br><span class="line"><span class="comment">Art constructor</span></span><br><span class="line"><span class="comment">Drawing constructor</span></span><br><span class="line"><span class="comment">Cartoon constructor</span></span><br><span class="line"><span class="comment">*/</span><span class="comment">//:~</span></span><br></pre></td></tr></table></figure>
-<p><strong>构建过程是从基类“向外”扩散的，所以基类在导出类构造器可以访问它之前，就已经完成了初始化。</strong><br>即便不为Cartoon()创建构造器，编译器也会为你合成一个默认的构造器，该构造器将调用基类的构造器。</p>
-<p><strong>带参数的构造器</strong><br>想调用一个带参数的基类构造器，就必须使用关键字<strong>super显式</strong>地编写调用基类构造器的语句。</p>
+<p>即使是一个程序中含有多个类，也只有<strong>命令行所调用的那个类的main()方法</strong>会被调用。因此，在此例中，如果命令行是java Detergent，那么Detergent.main()将会被调用，而即使Cleanser不是一个public类，如果命令行是java Cleanser，那么Cleanser.main()仍然会被调用。<br />
+<strong>即使一个类只具有包访问权限，其public main()仍然是可访问的。</strong><br />
+继承的一般规则是所有的<strong>数据成员都指定为private</strong>，而所有的<strong>方法指定为public</strong>。</p>
+<pre><code>super.fiction()即调用基类版本的fiction()方法。
+</code></pre>
+<h2 id="初始化基类"><a class="markdownIt-Anchor" href="#初始化基类"></a> 初始化基类</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Art</span></span>&#123;</span><br><span class="line">    Art()&#123; print(<span class="string">"Art constructor"</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Drawing</span> <span class="keyword">extends</span> <span class="title">Art</span></span>&#123;</span><br><span class="line">    Drawing()&#123; print(<span class="string">"Drawing constructor"</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cartoon</span> <span class="keyword">extends</span> <span class="title">Drawing</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cartoon</span><span class="params">()</span></span>&#123;print(<span class="string">"Cartoon constructor"</span>);&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Cartoon x = <span class="keyword">new</span> Cartoon();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">/* Output:</span></span><br><span class="line"><span class="comment">Art constructor</span></span><br><span class="line"><span class="comment">Drawing constructor</span></span><br><span class="line"><span class="comment">Cartoon constructor</span></span><br><span class="line"><span class="comment">*/</span><span class="comment">//:~</span></span><br></pre></td></tr></table></figure>
+<p><strong>构建过程是从基类“向外”扩散的，所以基类在导出类构造器可以访问它之前，就已经完成了初始化。</strong><br />
+即便不为Cartoon()创建构造器，编译器也会为你合成一个默认的构造器，该构造器将调用基类的构造器。</p>
+<p><strong>带参数的构造器</strong><br />
+想调用一个带参数的基类构造器，就必须使用关键字<strong>super显式</strong>地编写调用基类构造器的语句。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Game</span></span>&#123;</span><br><span class="line">    Game(<span class="keyword">int</span> i)&#123;</span><br><span class="line">        print(<span class="string">"Game constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BoardGame</span> <span class="keyword">extends</span> <span class="title">Game</span></span>&#123;</span><br><span class="line">    BoardGame(<span class="keyword">int</span> i)&#123;</span><br><span class="line">        <span class="keyword">super</span>(i);</span><br><span class="line">        print(<span class="string">"BoardGame constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chess</span> <span class="keyword">extends</span> <span class="title">BoardGame</span></span>&#123;</span><br><span class="line">    Chess()&#123;</span><br><span class="line">        <span class="keyword">super</span>(<span class="number">11</span>);</span><br><span class="line">        print(<span class="string">"Chess constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Chess x = <span class="keyword">new</span> Chess();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>注意</strong>：如果不在BoardGame()中调用基类构造器，编译器将“抱怨”无法找到符合Game()形式的构造器。同时，调用基类构造器必须是导出类构造器中要做的第一件事，即<strong>第一条完整语句</strong>。</p>
 </blockquote>
-<h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>代理为<strong>继承与组合之间的中庸之道</strong>，Java并没有提供对它的直接支持。<br>因为它既将一个成员对象置于所要构造的类中（组合），同时也在新类中暴露了该成员对象的所有方法（继承）。</p>
-<h1 id="结合使用组合和继承"><a href="#结合使用组合和继承" class="headerlink" title="结合使用组合和继承"></a>结合使用组合和继承</h1><p>同时使用组合和继承是很常见的事。</p>
-<h2 id="确保正确清理"><a href="#确保正确清理" class="headerlink" title="确保正确清理"></a>确保正确清理</h2><blockquote>
+<h1 id="代理"><a class="markdownIt-Anchor" href="#代理"></a> 代理</h1>
+<p>代理为<strong>继承与组合之间的中庸之道</strong>，Java并没有提供对它的直接支持。<br />
+因为它既将一个成员对象置于所要构造的类中（组合），同时也在新类中暴露了该成员对象的所有方法（继承）。</p>
+<h1 id="结合使用组合和继承"><a class="markdownIt-Anchor" href="#结合使用组合和继承"></a> 结合使用组合和继承</h1>
+<p>同时使用组合和继承是很常见的事。</p>
+<h2 id="确保正确清理"><a class="markdownIt-Anchor" href="#确保正确清理"></a> 确保正确清理</h2>
+<blockquote>
 <p>12章会详细说明try和finally两个关键字。其中关键字try表示，下面的块是所谓的保护区（guarde region），这意味着它需要被特殊处理。其中的一项特殊处理就是无论try块是如何退出的，保护区后的finally子句中的代码总是要被执行的。</p>
 </blockquote>
 <p>由于垃圾回收器可能以任何它想要的顺序回收对象，<strong>最好除了内存以外，不依赖垃圾回收器去做任何事</strong>。需要进行清理，最好是编写自己的清理方法，<strong>但不要使用finalize()</strong>。</p>
-<h2 id="名称屏蔽"><a href="#名称屏蔽" class="headerlink" title="名称屏蔽"></a>名称屏蔽</h2><p>在Java中可以对继承类引入重载方法（相对基类而言），但是<strong>在C++中若要完成这项工作则需要屏蔽基类方法</strong>。<br>Java SE5中增加了<font><strong>@Override</strong>注解以<strong>确保覆盖</strong>，而非重载。它虽不是关键字，但是可以把它当做关键字使用。<br><code>@Override void f(){//....}</code></p>
-<h1 id="在组合与继承之间选择"><a href="#在组合与继承之间选择" class="headerlink" title="在组合与继承之间选择"></a>在组合与继承之间选择</h1><p>组合：显式地在新的类中放置子对象，<strong>复用具体实现，无法看见嵌入对象的接口。</strong></p>
+<h2 id="名称屏蔽"><a class="markdownIt-Anchor" href="#名称屏蔽"></a> 名称屏蔽</h2>
+<p>在Java中可以对继承类引入重载方法（相对基类而言），但是<strong>在C++中若要完成这项工作则需要屏蔽基类方法</strong>。<br />
+Java SE5中增加了<font><strong>@Override</strong>注解以<strong>确保覆盖</strong>，而非重载。它虽不是关键字，但是可以把它当做关键字使用。<br />
+<code>@Override void f(){//....}</code></p>
+<h1 id="在组合与继承之间选择"><a class="markdownIt-Anchor" href="#在组合与继承之间选择"></a> 在组合与继承之间选择</h1>
+<p>组合：显式地在新的类中放置子对象，<strong>复用具体实现，无法看见嵌入对象的接口。</strong></p>
 <ul>
 <li>“汽车”（新类）have  “发动机” “轮胎” “车门”（基类）</li>
 </ul>
@@ -278,20 +300,36 @@
 <ul>
 <li>“汽车”（继承类）is  “交通工具”（基类）</li>
 </ul>
-<h1 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h1><p>将继承类对象引用转换为基类对象引用的动作，称之为向上转型。<br><strong>需慎用继承这一技术，一个最清晰的判断办法就是问自己是否需要从新类向基类进行向上转型</strong>。</p>
-<h1 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h1><h2 id="final数据"><a href="#final数据" class="headerlink" title="final数据"></a>final数据</h2><p>既是static优势final的域叫做<strong>编译期常量</strong>，需要用大写表示，并使用下划线分隔各个单词。<br>final表示数据无法修改，<strong>若数据是基本类型，便无法修改，若数据是引用，则该引用所指向的对象恒定不变，而指向对象的内容可以更改</strong>。</p>
-<p><strong>空白final</strong><br>所谓“空白final”是指被声明为final但又未给定初值的域。<br><strong>必须在域的定义出或者每个构造器中用表达式对final进行赋值，这正是final域在使用前总是被初始化的原因所在</strong>。</p>
-<h2 id="final参数"><a href="#final参数" class="headerlink" title="final参数"></a>final参数</h2><p>Java允许在参数列表中以声明的方式将参数指明为final，这意味着<strong>无法更改参数引用所指向的对象</strong>。</p>
-<h2 id="final方法"><a href="#final方法" class="headerlink" title="final方法"></a>final方法</h2><p>使用final方法有<strong>两个原因</strong></p>
+<h1 id="向上转型"><a class="markdownIt-Anchor" href="#向上转型"></a> 向上转型</h1>
+<p>将继承类对象引用转换为基类对象引用的动作，称之为向上转型。<br />
+<strong>需慎用继承这一技术，一个最清晰的判断办法就是问自己是否需要从新类向基类进行向上转型</strong>。</p>
+<h1 id="final关键字"><a class="markdownIt-Anchor" href="#final关键字"></a> final关键字</h1>
+<h2 id="final数据"><a class="markdownIt-Anchor" href="#final数据"></a> final数据</h2>
+<p>既是static优势final的域叫做<strong>编译期常量</strong>，需要用大写表示，并使用下划线分隔各个单词。<br />
+final表示数据无法修改，<strong>若数据是基本类型，便无法修改，若数据是引用，则该引用所指向的对象恒定不变，而指向对象的内容可以更改</strong>。</p>
+<p><strong>空白final</strong><br />
+所谓“空白final”是指被声明为final但又未给定初值的域。<br />
+<strong>必须在域的定义出或者每个构造器中用表达式对final进行赋值，这正是final域在使用前总是被初始化的原因所在</strong>。</p>
+<h2 id="final参数"><a class="markdownIt-Anchor" href="#final参数"></a> final参数</h2>
+<p>Java允许在参数列表中以声明的方式将参数指明为final，这意味着<strong>无法更改参数引用所指向的对象</strong>。</p>
+<h2 id="final方法"><a class="markdownIt-Anchor" href="#final方法"></a> final方法</h2>
+<p>使用final方法有<strong>两个原因</strong></p>
 <ol>
 <li>把方法锁定，以防止任何继承类修改它的含义，确保在继承中是方法行为保持不变，并且不会被覆盖。</li>
 <li>效率原因，在Java的早期实现中，将方法指明为final，则编译器将会针对该方法的所有调用转为内嵌调用。于是编译器在调用这个方法时，会谨慎判断，跳过插入程序代码这种正常方式而执行方法调用机制（将参数压入栈，跳至方法代码处并执行，然后跳回并清理栈中的参数，处理返回值），同时使用方法体中的实际代码副本来代替方法调用，从而消除方法调用的开销。如果一个方法很大，程序代码便会很大，因而看不到内嵌带来的任何性能提高，因为，所带来的的性能提高会因为花费于方法内的时间量而被缩减。</li>
 </ol>
 <p>到了Java SE5/6时，应该<strong>让编译器和JVM去处理效率问题</strong>，而只有在想要<strong>明确禁止覆盖</strong>时，才应该将方法设置为final的。</p>
-<h2 id="final和private关键字"><a href="#final和private关键字" class="headerlink" title="final和private关键字"></a>final和private关键字</h2><p>private方法<strong>隐式地指定为final</strong>，可以对private方法添加final修饰词，但是并不能增加任何额外的意义。<br>如果想要“覆盖”一个private方法， 似乎是奏效的，因为基类中的private方法在继承类中不可见也不可用，<strong>于是所谓的“覆盖”便是新建了一个与之同名的方法。</strong></p>
-<h2 id="final类"><a href="#final类" class="headerlink" title="final类"></a>final类</h2><p>将某个类整体定义为final，便表明了你<strong>不打算继承该类，不希望它有子类</strong>，同时该类中的所有方法都隐式地指定为final的，也可对这些方法添加final修饰词但是同样不存在任何额外的意义。</p>
+<h2 id="final和private关键字"><a class="markdownIt-Anchor" href="#final和private关键字"></a> final和private关键字</h2>
+<p>private方法<strong>隐式地指定为final</strong>，可以对private方法添加final修饰词，但是并不能增加任何额外的意义。<br />
+如果想要“覆盖”一个private方法， 似乎是奏效的，因为基类中的private方法在继承类中不可见也不可用，<strong>于是所谓的“覆盖”便是新建了一个与之同名的方法。</strong></p>
+<h2 id="final类"><a class="markdownIt-Anchor" href="#final类"></a> final类</h2>
+<p>将某个类整体定义为final，便表明了你<strong>不打算继承该类，不希望它有子类</strong>，同时该类中的所有方法都隐式地指定为final的，也可对这些方法添加final修饰词但是同样不存在任何额外的意义。</p>
 <blockquote>
-<p><strong>Java中的final类</strong><br>    - 基本类型的包装类<br>    - 字符串：String、StringBuilder、StringBuffer<br>    - 数字：Math、StrictMath<br>    - 系统：System、Class</p>
+<p><strong>Java中的final类</strong><br />
+- 基本类型的包装类<br />
+- 字符串：String、StringBuilder、StringBuffer<br />
+- 数字：Math、StrictMath<br />
+- 系统：System、Class</p>
 </blockquote>
 
     </div>
@@ -333,7 +371,10 @@
     <a href="/2020/04/06/(Python)%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81exe/" rel="prev" title="(Python)凯撒密码exe">
       <i class="fa fa-chevron-left"></i> (Python)凯撒密码exe
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/12/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AB%E7%AB%A0(%E5%A4%9A%E6%80%81)/" rel="next" title="Java编程思想——第八章(多态)">
+      Java编程思想——第八章(多态) <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -393,7 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#组合语法"><span class="nav-number">1.</span> <span class="nav-text">组合语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承语法"><span class="nav-number">2.</span> <span class="nav-text">继承语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化基类"><span class="nav-number">2.1.</span> <span class="nav-text">初始化基类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代理"><span class="nav-number">3.</span> <span class="nav-text">代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结合使用组合和继承"><span class="nav-number">4.</span> <span class="nav-text">结合使用组合和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#确保正确清理"><span class="nav-number">4.1.</span> <span class="nav-text">确保正确清理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称屏蔽"><span class="nav-number">4.2.</span> <span class="nav-text">名称屏蔽</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在组合与继承之间选择"><span class="nav-number">5.</span> <span class="nav-text">在组合与继承之间选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向上转型"><span class="nav-number">6.</span> <span class="nav-text">向上转型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#final关键字"><span class="nav-number">7.</span> <span class="nav-text">final关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#final数据"><span class="nav-number">7.1.</span> <span class="nav-text">final数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final参数"><span class="nav-number">7.2.</span> <span class="nav-text">final参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final方法"><span class="nav-number">7.3.</span> <span class="nav-text">final方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final和private关键字"><span class="nav-number">7.4.</span> <span class="nav-text">final和private关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final类"><span class="nav-number">7.5.</span> <span class="nav-text">final类</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#组合语法"><span class="nav-number">1.</span> <span class="nav-text"> 组合语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承语法"><span class="nav-number">2.</span> <span class="nav-text"> 继承语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化基类"><span class="nav-number">2.1.</span> <span class="nav-text"> 初始化基类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代理"><span class="nav-number">3.</span> <span class="nav-text"> 代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结合使用组合和继承"><span class="nav-number">4.</span> <span class="nav-text"> 结合使用组合和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#确保正确清理"><span class="nav-number">4.1.</span> <span class="nav-text"> 确保正确清理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名称屏蔽"><span class="nav-number">4.2.</span> <span class="nav-text"> 名称屏蔽</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在组合与继承之间选择"><span class="nav-number">5.</span> <span class="nav-text"> 在组合与继承之间选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向上转型"><span class="nav-number">6.</span> <span class="nav-text"> 向上转型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#final关键字"><span class="nav-number">7.</span> <span class="nav-text"> final关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#final数据"><span class="nav-number">7.1.</span> <span class="nav-text"> final数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final参数"><span class="nav-number">7.2.</span> <span class="nav-text"> final参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final方法"><span class="nav-number">7.3.</span> <span class="nav-text"> final方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final和private关键字"><span class="nav-number">7.4.</span> <span class="nav-text"> final和private关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final类"><span class="nav-number">7.5.</span> <span class="nav-text"> final类</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -409,7 +450,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -422,7 +463,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -521,6 +562,8 @@
 
 
 
+
+  
 
   
 

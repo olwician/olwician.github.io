@@ -28,7 +28,7 @@
 <meta property="og:description" content="第五章(初始化与清理)的概括总结">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-30T13:23:13.000Z">
-<meta property="article:modified_time" content="2020-04-09T13:44:43.941Z">
+<meta property="article:modified_time" content="2020-04-12T14:10:04.241Z">
 <meta property="article:author" content="OlWician Chen">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="基础知识">
@@ -118,7 +118,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-09 21:44:43" itemprop="dateModified" datetime="2020-04-09T21:44:43+08:00">2020-04-09</time>
+                <time title="修改时间：2020-04-12 22:10:04" itemprop="dateModified" datetime="2020-04-12T22:10:04+08:00">2020-04-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,106 +252,145 @@
 <p>第五章(初始化与清理)的概括总结</p>
 </blockquote>
 <a id="more"></a>
-<hr>
+<hr />
 <blockquote>
 <p>随着计算机革命的发展，“不安全”的编程方式已逐渐成为编程代价高昂的主因之一。</p>
 </blockquote>
-<h1 id="用构造器确保初始化"><a href="#用构造器确保初始化" class="headerlink" title="用构造器确保初始化"></a>用构造器确保初始化</h1><ul>
+<h1 id="用构造器确保初始化"><a class="markdownIt-Anchor" href="#用构造器确保初始化"></a> 用构造器确保初始化</h1>
+<ul>
 <li>调用构造器是编译器的责任。</li>
 <li>构造器采用与<strong>类相同</strong>的名称。</li>
 <li>在Java中，<font><strong>“初始化”和“创建”</strong></font>捆绑在一起，两者不能分离。</li>
 <li>构造器是一种特殊类型的方法，没有返回值，与返回值为空（void）不同。</li>
 </ul>
-<h1 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h1><h2 id="区分重载方法"><a href="#区分重载方法" class="headerlink" title="区分重载方法"></a>区分重载方法</h2><ul>
+<h1 id="方法重载"><a class="markdownIt-Anchor" href="#方法重载"></a> 方法重载</h1>
+<h2 id="区分重载方法"><a class="markdownIt-Anchor" href="#区分重载方法"></a> 区分重载方法</h2>
+<ul>
 <li>参数类型的差异</li>
 <li>参数顺序的差异 (一般情况<strong>不建议</strong>，因为这会使代码难以维护）</li>
 </ul>
-<h2 id="涉及基本类型的重载"><a href="#涉及基本类型的重载" class="headerlink" title="涉及基本类型的重载"></a>涉及基本类型的重载</h2><ul>
-<li>实参类型<strong>小于</strong>形参类型，实际数据类型会被提升。<br>无法找到接受char参数的方法时，char直接提升至int型。</li>
+<h2 id="涉及基本类型的重载"><a class="markdownIt-Anchor" href="#涉及基本类型的重载"></a> 涉及基本类型的重载</h2>
+<ul>
+<li>实参类型<strong>小于</strong>形参类型，实际数据类型会被提升。<br />
+无法找到接受char参数的方法时，char直接提升至int型。</li>
 <li>实参类型<strong>大于</strong>形参类型，需通过类型转换来执行<strong>窄化转换</strong>，否则编译器会报错。</li>
 </ul>
-<h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><blockquote>
-<p>问题：<strong>a.peel(1),b.peel(2)</strong>，如何知道是a还是b调用的peel方法?<br>答案：使用this关键字，this可理解为所操作<strong>对象的引用</strong>，作为第一个参数传给peel()，类似于<strong>Banna.peel(a,1)</strong></p>
+<h1 id="this关键字"><a class="markdownIt-Anchor" href="#this关键字"></a> this关键字</h1>
+<blockquote>
+<p>问题：<strong>a.peel(1),b.peel(2)</strong>，如何知道是a还是b调用的peel方法?<br />
+答案：使用this关键字，this可理解为所操作<strong>对象的引用</strong>，作为第一个参数传给peel()，类似于<strong>Banna.peel(a,1)</strong></p>
 </blockquote>
-<h1 id="在构造器中调用构造器"><a href="#在构造器中调用构造器" class="headerlink" title="在构造器中调用构造器"></a>在构造器中调用构造器</h1><ul>
+<h1 id="在构造器中调用构造器"><a class="markdownIt-Anchor" href="#在构造器中调用构造器"></a> 在构造器中调用构造器</h1>
+<ul>
 <li>必须将构造器调用置于最起始处。</li>
 <li>构造器中只能用this调用一个构造器</li>
 <li>除构造器外，编译器禁止在其他任何方法中调用构造器。</li>
 </ul>
-<h1 id="static的含义"><a href="#static的含义" class="headerlink" title="static的含义"></a>static的含义</h1><p>static方法没有this的方法，因为在<strong>static方法的内部不能调用非静态方法。</strong></p>
-<h1 id="清理：终结处理和垃圾回收"><a href="#清理：终结处理和垃圾回收" class="headerlink" title="清理：终结处理和垃圾回收"></a>清理：终结处理和垃圾回收</h1><h2 id="垃圾回收器"><a href="#垃圾回收器" class="headerlink" title="垃圾回收器"></a>垃圾回收器</h2><ul>
-<li><p>只能释放由<strong>new分配</strong>的内存</p>
+<h1 id="static的含义"><a class="markdownIt-Anchor" href="#static的含义"></a> static的含义</h1>
+<p>static方法没有this的方法，因为在<strong>static方法的内部不能调用非静态方法。</strong></p>
+<h1 id="清理终结处理和垃圾回收"><a class="markdownIt-Anchor" href="#清理终结处理和垃圾回收"></a> 清理：终结处理和垃圾回收</h1>
+<h2 id="垃圾回收器"><a class="markdownIt-Anchor" href="#垃圾回收器"></a> 垃圾回收器</h2>
+<ul>
+<li>
+<p>只能释放由<strong>new分配</strong>的内存</p>
 </li>
-<li><p>无法释放由并非new创建的对象所占据的内存，以及“本地方法”分配的内存。</p>
-<pre><code>本地方法：在Java中调用了非Java代码，如C的malloc()会分配存储空间</code></pre></li>
+<li>
+<p>无法释放由并非new创建的对象所占据的内存，以及“本地方法”分配的内存。</p>
+<pre><code> 本地方法：在Java中调用了非Java代码，如C的malloc()会分配存储空间
+</code></pre>
+</li>
 </ul>
-<h2 id="finalize-原理"><a href="#finalize-原理" class="headerlink" title="finalize()原理"></a>finalize()原理</h2><ul>
-<li><p>垃圾回收器追备好释放对象占用的存储空间时，首先调用finalize()，然后垃圾回收动作发生，便会真正地回收对象占用的内存。</p>
+<h2 id="finalize原理"><a class="markdownIt-Anchor" href="#finalize原理"></a> finalize()原理</h2>
+<ul>
+<li>
+<p>垃圾回收器追备好释放对象占用的存储空间时，首先调用finalize()，然后垃圾回收动作发生，便会真正地回收对象占用的内存。</p>
 </li>
-<li><p>C++中，对象一定会被销毁，而Java里的对象却<strong>并非总是被垃圾回收</strong></p>
+<li>
+<p>C++中，对象一定会被销毁，而Java里的对象却<strong>并非总是被垃圾回收</strong></p>
 <ol>
-<li>对象可能不被垃圾回收</li>
-<li>垃圾回收并不等于“析构”</li>
-<li>垃圾回收只与内存有关</li>
-<li>绝对不能直接调用<strong>finalize()</strong></li>
+<li>
+<p>对象可能不被垃圾回收</p>
+</li>
+<li>
+<p>垃圾回收并不等于“析构”</p>
+</li>
+<li>
+<p>垃圾回收只与内存有关</p>
+</li>
+<li>
+<p>绝对不能直接调用<strong>finalize()</strong></p>
+<pre><code> System.gc()用于强制进行终结动作
+</code></pre>
+</li>
 </ol>
 </li>
 </ul>
-<pre><code>System.gc()用于强制进行终结动作</code></pre><h2 id="垃圾回收器如何工作"><a href="#垃圾回收器如何工作" class="headerlink" title="垃圾回收器如何工作"></a>垃圾回收器如何工作</h2><ul>
-<li><p>垃圾回收器显著提升对象的创建速度——<strong>存储空间的释放会影响存储空间的分配</strong>（Java虚拟机的工作方式）</p>
-</li>
-<li><p><strong>Java虚拟机中的堆的实现</strong>：像是一个<strong>传送带</strong>，每分配一个新对象，它就往前移动一格。（这意味着对象存储空间的分配速度非常快）</p>
-</li>
-<li><p><strong>垃圾回收器工作原理</strong>：一面回收空间，一面使堆中的对象紧凑排列，这样“<strong>堆指针</strong>”就可以很容易移动至更靠近传送带的开始处，也就尽量<strong>避免了页面错误</strong>。通过垃圾回收器对对象重新排列，实现了<strong>一种高速的、有无限空间可分配的堆模型</strong>。</p>
-</li>
-<li><p>Java虚拟机采用自适应的垃圾回收技术</p>
+<h2 id="垃圾回收器如何工作"><a class="markdownIt-Anchor" href="#垃圾回收器如何工作"></a> 垃圾回收器如何工作</h2>
+<ul>
+<li>垃圾回收器显著提升对象的创建速度——<strong>存储空间的释放会影响存储空间的分配</strong>（Java虚拟机的工作方式）</li>
+<li><strong>Java虚拟机中的堆的实现</strong>：像是一个<strong>传送带</strong>，每分配一个新对象，它就往前移动一格。（这意味着对象存储空间的分配速度非常快）</li>
+<li><strong>垃圾回收器工作原理</strong>：一面回收空间，一面使堆中的对象紧凑排列，这样“<strong>堆指针</strong>”就可以很容易移动至更靠近传送带的开始处，也就尽量<strong>避免了页面错误</strong>。通过垃圾回收器对对象重新排列，实现了<strong>一种高速的、有无限空间可分配的堆模型</strong>。</li>
+<li>Java虚拟机采用自适应的垃圾回收技术
 <ol>
-<li>第一种做法：<strong>停止——复制(stop-and-copy)</strong>：先暂停程序的运行，然后将所有存活的对象从当前堆复制到另一个堆，没有被复制的全部都是垃圾。当对象被复制到新堆时，它们是一个挨着一个的，所以新堆保持紧凑排列，然后就可以同上述的方法简单而直接地分配新空间。<br>这种方法效率会降低，<strong>两个原因</strong><br><font><strong>1）</strong></font>需要<strong>两个堆</strong>，从而使得维护比实际需要多一倍的空间，某些Java虚拟机处理方式：从<strong>堆中分配几块较大的内存</strong>，复制动作发生在这些<strong>大块内存之间</strong>。<br><font><strong>2）</strong></font>程序中可能只有少量垃圾，甚至没有垃圾，这进行复制就造成了<strong>浪费</strong>。于是Java虚拟机进行检查，如果没有新垃圾产生，就会转换到另一种工作模式（根据情况转变即“自适应”），被称为<strong>标记——清扫(make-and-sweep)</strong></li>
+<li>第一种做法：<strong>停止——复制(stop-and-copy)</strong>：先暂停程序的运行，然后将所有存活的对象从当前堆复制到另一个堆，没有被复制的全部都是垃圾。当对象被复制到新堆时，它们是一个挨着一个的，所以新堆保持紧凑排列，然后就可以同上述的方法简单而直接地分配新空间。<br />
+这种方法效率会降低，<strong>两个原因</strong><br />
+<font><strong>1）</strong></font>需要<strong>两个堆</strong>，从而使得维护比实际需要多一倍的空间，某些Java虚拟机处理方式：从<strong>堆中分配几块较大的内存</strong>，复制动作发生在这些<strong>大块内存之间</strong>。<br />
+<font><strong>2）</strong></font>程序中可能只有少量垃圾，甚至没有垃圾，这进行复制就造成了<strong>浪费</strong>。于是Java虚拟机进行检查，如果没有新垃圾产生，就会转换到另一种工作模式（根据情况转变即“自适应”），被称为<strong>标记——清扫(make-and-sweep)</strong></li>
 <li>第二种做法：<strong>标记——清扫</strong>,从<strong>堆栈</strong>和<strong>静态存储区</strong>出发，遍历所有的引用，进而找出所有存活的对象，每找到一个，便会给对象一个标记。完成所有标记工作之后，便开始清理动作，没有标记的对象会被释放，不会发生任何复制动作，<strong>同时剩下的堆空间是不连续的</strong>。</li>
 </ol>
+</li>
+</ul>
 <blockquote>
 <p>“停止——复制”不在后台进行，而“标记——清扫”必须在程序暂停的情况下进行。</p>
 </blockquote>
 <blockquote>
 <p>内存分配以较大的“块”为单位，如果对象较大，它会占用单独的块，每个块会用相应的代数来记录它是否存活（这对处理大量短命的临时对象很有帮助）。Java虚拟机会监视，如果对象稳定，效率降低，便会切换到“标记——清扫”方式；如果堆空间出现很多碎片，就会切换到“停止——复制”方式，<strong>这便是“自适应”技术，全称：“自适应的、分代的，停止——复制、标记——清扫”式垃圾回收器</strong>。</p>
 </blockquote>
-</li>
-<li><p>Java虚拟机中有许多附加技术用以提升速度。尤其是与加载器操作有关的，<strong>称为“即时”（JIT，Just-In-Time）编译器技术</strong>。<br>这种技术可以把程序全部或部分翻译成<strong>本地机器码（本是Java虚拟机的工作）</strong>，从而使程序运行速度得到提升。</p>
-</li>
+<ul>
+<li>Java虚拟机中有许多附加技术用以提升速度。尤其是与加载器操作有关的，<strong>称为“即时”（JIT，Just-In-Time）编译器技术</strong>。<br />
+这种技术可以把程序全部或部分翻译成<strong>本地机器码（本是Java虚拟机的工作）</strong>，从而使程序运行速度得到提升。</li>
 </ul>
-<p>当装载某个类时，编译器会先找到.class文件，将该类的<strong>字节码装入内存</strong>。<br>此时，有<strong>两个方案</strong>可以选择：<br><font><strong>1)</strong></font>让即时编译器编译所有代码，这做法存在两个<strong>缺陷</strong>：</p>
+<p>当装载某个类时，编译器会先找到.class文件，将该类的<strong>字节码装入内存</strong>。<br />
+此时，有<strong>两个方案</strong>可以选择：<br />
+<font><strong>1)</strong></font>让即时编译器编译所有代码，这做法存在两个<strong>缺陷</strong>：</p>
 <ol>
 <li>加载动作散落在整个程序生命周期内，累加起来要花更多时间。</li>
 <li>增加可执行代码的长度（字节码要比即时编译器展开后的本地机器码小很多），这导致<strong>页面调度</strong>，从而降低程序速度。</li>
 </ol>
 <p><font><strong>2)</strong></font><strong>惰性评估(lazy evaluation)</strong>，即时编译器只在必要的情况进行编译代码，从而使不会被执行的代码不会被JIT编译。</p>
-<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><ul>
+<h1 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化</h1>
+<ul>
 <li>只有第一次访问静态数据时，静态对象才会被初始化</li>
-<li>初始化顺序：<ol>
+<li>初始化顺序：
+<ol>
 <li>静态初始化 static{},首次加载类时执行（即便未生成类对象）</li>
 <li>非静态初始化 {}，生成对象时执行，匿名内部类的初始化（见第十章）</li>
 <li>构造器</li>
 </ol>
 </li>
 </ul>
-<h1 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a1;</span><br><span class="line"><span class="keyword">int</span> a1[];</span><br></pre></td></tr></table></figure>
-
+<h1 id="数组初始化"><a class="markdownIt-Anchor" href="#数组初始化"></a> 数组初始化</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a1;</span><br><span class="line"><span class="keyword">int</span> a1[];</span><br></pre></td></tr></table></figure>
 <p>在Java中<strong>前一种格式更合理</strong>，表明了一个int型数组。</p>
 <ul>
-<li><p>数组的初始化可以由一对花括号括起来的值组成的，其存储空间的分配等价于使用new，由编译器负责。<br><code>int[] a1 = {1,2,3,4,5};</code><br>所有数组都一个<strong>固有成员length</strong>，可以通过它获知数组内包含了多少个元素。</p>
+<li>数组的初始化可以由一对花括号括起来的值组成的，其存储空间的分配等价于使用new，由编译器负责。<br />
+<code>int[] a1 = {1,2,3,4,5};</code><br />
+所有数组都一个<strong>固有成员length</strong>，可以通过它获知数组内包含了多少个元素。</li>
+</ul>
 <blockquote>
 <p>每次访问数组的时候都要检查边界，这一做法在时间和代码上都是需要开销的，无法禁用这个功能。Java设计者认为这种权衡是值得的。尽管你可能会受到诱惑，去编写你认为可以使得数组访问效率提高的代码，但是这一切都是在浪费时间，因为自动的编译期错误和运行时优化都可以提高数组访问的速度。</p>
 </blockquote>
-</li>
-<li><p>数组能够在定义的同时进行初始化</p>
+<ul>
+<li>数组能够在定义的同时进行初始化</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[rand.nextInt(<span class="number">10</span>)];</span><br><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,&#125;;</span><br></pre></td></tr></table></figure>
-<p>初始化列表的最后一个逗号是可选的，这特性使得维护长列表变得更加容易。<br>若创建一个非基本类型的数组，那么就创建了一个<strong>引用数组</strong>（例如Integer是一个类而不是基本类型）</p>
-</li>
-<li><p>可变参数列表，应用于参数个数或类型未知的场合</p>
+<p>初始化列表的最后一个逗号是可选的，这特性使得维护长列表变得更加容易。<br />
+若创建一个非基本类型的数组，那么就创建了一个<strong>引用数组</strong>（例如Integer是一个类而不是基本类型）</p>
+<ul>
+<li>可变参数列表，应用于参数个数或类型未知的场合</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">p</span><span class="params">(Object... args)</span></span>&#123;&#125;</span><br><span class="line">p(<span class="keyword">new</span> Integer(<span class="number">47</span>),<span class="keyword">new</span> Float(<span class="number">3.14</span>),<span class="keyword">new</span> Double(<span class="number">11.11</span>));</span><br><span class="line">p(<span class="number">47</span>,<span class="number">3.14F</span>,<span class="number">11.11</span>);</span><br><span class="line">p(<span class="string">"one"</span>,<span class="string">"two"</span>,<span class="string">"three"</span>);</span><br><span class="line">p((Object[])<span class="keyword">new</span> Integer[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;);</span><br><span class="line">p();<span class="comment">//空参数也可以</span></span><br></pre></td></tr></table></figure>
 <p><strong>应该在重载方法的最多一个版本上使用可变参数列表，或者根本不用。</strong></p>
-</li>
-</ul>
 
     </div>
 
@@ -455,7 +494,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用构造器确保初始化"><span class="nav-number">1.</span> <span class="nav-text">用构造器确保初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法重载"><span class="nav-number">2.</span> <span class="nav-text">方法重载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#区分重载方法"><span class="nav-number">2.1.</span> <span class="nav-text">区分重载方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#涉及基本类型的重载"><span class="nav-number">2.2.</span> <span class="nav-text">涉及基本类型的重载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this关键字"><span class="nav-number">3.</span> <span class="nav-text">this关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在构造器中调用构造器"><span class="nav-number">4.</span> <span class="nav-text">在构造器中调用构造器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#static的含义"><span class="nav-number">5.</span> <span class="nav-text">static的含义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清理：终结处理和垃圾回收"><span class="nav-number">6.</span> <span class="nav-text">清理：终结处理和垃圾回收</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收器"><span class="nav-number">6.1.</span> <span class="nav-text">垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize-原理"><span class="nav-number">6.2.</span> <span class="nav-text">finalize()原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收器如何工作"><span class="nav-number">6.3.</span> <span class="nav-text">垃圾回收器如何工作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化"><span class="nav-number">7.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组初始化"><span class="nav-number">8.</span> <span class="nav-text">数组初始化</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用构造器确保初始化"><span class="nav-number">1.</span> <span class="nav-text"> 用构造器确保初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法重载"><span class="nav-number">2.</span> <span class="nav-text"> 方法重载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#区分重载方法"><span class="nav-number">2.1.</span> <span class="nav-text"> 区分重载方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#涉及基本类型的重载"><span class="nav-number">2.2.</span> <span class="nav-text"> 涉及基本类型的重载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this关键字"><span class="nav-number">3.</span> <span class="nav-text"> this关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在构造器中调用构造器"><span class="nav-number">4.</span> <span class="nav-text"> 在构造器中调用构造器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#static的含义"><span class="nav-number">5.</span> <span class="nav-text"> static的含义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清理终结处理和垃圾回收"><span class="nav-number">6.</span> <span class="nav-text"> 清理：终结处理和垃圾回收</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收器"><span class="nav-number">6.1.</span> <span class="nav-text"> 垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize原理"><span class="nav-number">6.2.</span> <span class="nav-text"> finalize()原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收器如何工作"><span class="nav-number">6.3.</span> <span class="nav-text"> 垃圾回收器如何工作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化"><span class="nav-number">7.</span> <span class="nav-text"> 初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组初始化"><span class="nav-number">8.</span> <span class="nav-text"> 数组初始化</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -471,7 +510,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -484,7 +523,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -583,6 +622,8 @@
 
 
 
+
+  
 
   
 
