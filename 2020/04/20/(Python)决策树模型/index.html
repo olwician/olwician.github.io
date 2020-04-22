@@ -28,7 +28,7 @@
 <meta property="og:description" content="CART、ID3决策树模型概述">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-20T03:03:02.000Z">
-<meta property="article:modified_time" content="2020-04-20T05:41:33.543Z">
+<meta property="article:modified_time" content="2020-04-22T07:18:26.782Z">
 <meta property="article:author" content="OlWician Chen">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="算法">
@@ -209,10 +209,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-20 11:03:02 / 修改时间：13:41:33" itemprop="dateCreated datePublished" datetime="2020-04-20T11:03:02+08:00">2020-04-20</time>
+              <time title="创建时间：2020-04-20 11:03:02" itemprop="dateCreated datePublished" datetime="2020-04-20T11:03:02+08:00">2020-04-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-22 15:18:26" itemprop="dateModified" datetime="2020-04-22T15:18:26+08:00">2020-04-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -259,8 +265,8 @@ CART算法是一种<strong>二分递归分割技术</strong>，把当前样本�
 <h3 id="数据集描述"><a class="markdownIt-Anchor" href="#数据集描述"></a> 数据集描述</h3>
 <p>使用NBA 2018—2019赛季的比赛数据,由http://Basketball-Reference.com提供</p>
 <ul>
-<li><a href="./2018-2019NBA.csv">2018-2019NBA.csv</a></li>
-<li><a href="./leagues_NBA_2019_standings_expanded-standings1.csv">leagues_NBA_2019_standings_expanded-standings1.csv</a></li>
+<li><a href="../asset/docu/2018-2019NBA.csv">2018-2019NBA.csv</a></li>
+<li><a href="../asset/docu/leagues_NBA_2019_standings_expanded-standings1.csv">leagues_NBA_2019_standings_expanded-standings1.csv</a></li>
 </ul>
 <h3 id="加载数据集"><a class="markdownIt-Anchor" href="#加载数据集"></a> 加载数据集</h3>
 <p>使用pandas库来加载数据集。</p>
@@ -370,7 +376,7 @@ CART算法是一种<strong>二分递归分割技术</strong>，把当前样本�
 <p>同理也可以计算出其他几个属性的信息增益，选择信息增益最大的属性作为根节点来进行划分，然后再对每个分支做进一步划分。</p>
 <h3 id="加载数据集-2"><a class="markdownIt-Anchor" href="#加载数据集-2"></a> 加载数据集</h3>
 <ul>
-<li><a href="./watermalon.csv">watermalon.csv</a></li>
+<li><a href="../asset/docu/watermalon.csv">watermalon.csv</a></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">watermalon_filename = os.path.join(data_folder, <span class="string">"watermalon.csv"</span>)</span><br><span class="line">watermalon = pd.read_csv(watermalon_filename)</span><br><span class="line">watermalon = np.array(watermalon).tolist()</span><br></pre></td></tr></table></figure>
 <h4 id="计算信息熵"><a class="markdownIt-Anchor" href="#计算信息熵"></a> 计算信息熵</h4>
