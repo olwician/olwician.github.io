@@ -20,24 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./node_modules/hexo-generator-search/search.xml"};
   </script>
 
-  <meta name="description" content="第二章(一切都是对象)的概括总结">
+  <meta name="description" content="第十章(内部类)的概括总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java编程思想——第二章(一切都是对象)">
-<meta property="og:url" content="http://yoursite.com/2020/03/24/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0(%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1)/index.html">
+<meta property="og:title" content="Java编程思想——第十章(内部类)">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E7%AB%A0(%E5%86%85%E9%83%A8%E7%B1%BB)/index.html">
 <meta property="og:site_name" content="BlOW">
-<meta property="og:description" content="第二章(一切都是对象)的概括总结">
+<meta property="og:description" content="第十章(内部类)的概括总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2020/03/24/8bzjnx.png">
-<meta property="article:published_time" content="2020-03-24T04:38:50.000Z">
-<meta property="article:modified_time" content="2020-04-12T14:10:04.241Z">
+<meta property="article:published_time" content="2020-04-22T07:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-22T07:00:10.396Z">
 <meta property="article:author" content="OlWician Chen">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="基础知识">
 <meta property="article:tag" content="书籍">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/24/8bzjnx.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/03/24/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0(%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1)/">
+<link rel="canonical" href="http://yoursite.com/2020/04/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E7%AB%A0(%E5%86%85%E9%83%A8%E7%B1%BB)/">
 
 
 <script id="page-configurations">
@@ -49,7 +47,7 @@
   };
 </script>
 
-  <title>Java编程思想——第二章(一切都是对象) | BlOW</title>
+  <title>Java编程思想——第十章(内部类) | BlOW</title>
   
 
 
@@ -188,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/24/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0(%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E7%AB%A0(%E5%86%85%E9%83%A8%E7%B1%BB)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -201,7 +199,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java编程思想——第二章(一切都是对象)
+          Java编程思想——第十章(内部类)
         </h1>
 
         <div class="post-meta">
@@ -210,16 +208,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-03-24 12:38:50" itemprop="dateCreated datePublished" datetime="2020-03-24T12:38:50+08:00">2020-03-24</time>
+              <time title="创建时间：2020-04-22 15:00:00 / 修改时间：15:00:10" itemprop="dateCreated datePublished" datetime="2020-04-22T15:00:00+08:00">2020-04-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-12 22:10:04" itemprop="dateModified" datetime="2020-04-12T22:10:04+08:00">2020-04-12</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -251,90 +243,92 @@
 
       
         <blockquote>
-<p>第二章(一切都是对象)的概括总结</p>
+<p>第十章(内部类)的概括总结</p>
 </blockquote>
 <a id="more"></a>
 <hr />
 <blockquote>
-<p>尽管Java是基于C++的，但是相比之下，Java是一种更“纯粹”的面向对象程序设计语言。<br />
-在开始用Java进行设计之前，必须将思想转化到面向对象的世界中来。<br />
-<strong>虽然Java中（几乎）一切都是对象，但是Java仍然存在不属于对象的东西。</strong></p>
+<p>可以将一个类的定义放在另一个类的定义内部，这就是<strong>内部类</strong>。</p>
 </blockquote>
-<h1 id="用引用操作对象"><a class="markdownIt-Anchor" href="#用引用操作对象"></a> 用引用操作对象</h1>
-<p>使用<font><strong>引用(reference)</strong></font>来进行操作对象</p>
-<pre><code>类比于遥控器（引用）——&gt; 电视机（对象）
-</code></pre>
-<p>通常，必须对对象采用一种更通用的初始化方法，而Java中字符串可以用<strong>带引号的文本初始化</strong>。</p>
-<h1 id="必须有你创建所有对象"><a class="markdownIt-Anchor" href="#必须有你创建所有对象"></a> 必须有你创建所有对象</h1>
-<h2 id="数据存储区域"><a class="markdownIt-Anchor" href="#数据存储区域"></a> 数据存储区域</h2>
+<h1 id="创建内部类"><a class="markdownIt-Anchor" href="#创建内部类"></a> 创建内部类</h1>
+<p>想从外部类的非静态方法之外的任意位置创建某个内部类的对象，需具体地指明这个对象的类型：<strong>OuterClassName.InnerClassName</strong></p>
+<h1 id="链接到外部类"><a class="markdownIt-Anchor" href="#链接到外部类"></a> 链接到外部类</h1>
+<p><strong>内部类可以访问其外围类的方法和字段</strong><br />
+当某个外围类的对象创建了一个内部类对象时，此内部类对象必定会秘密地捕获一个指向<strong>那个外围类对象的引用</strong>，然后在你访问此外围类的成员时，就是用那个引用来选在外围类的成员。</p>
+<h1 id="使用this与new"><a class="markdownIt-Anchor" href="#使用this与new"></a> 使用.this与.new</h1>
+<p>如果需要生成对外部类对象的引用，可以使用外部类的名字后面.this，这样产生的引用自动地具有正确的类型。<br />
+如果想要一个对象，去创建其某个内部类的对象，需要使用.new语法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DotNew</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        DotNew dn = <span class="keyword">new</span> DotNew();</span><br><span class="line">        DotNew.Inner dni = dn.<span class="keyword">new</span> Inner();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">///:~</span></span><br></pre></td></tr></table></figure>
+<p><strong>必须拥有外部类对象，才能够创建内部类对象（除非你创建的嵌套类，即静态内部类）</strong></p>
+<h1 id="内部类与向上转型"><a class="markdownIt-Anchor" href="#内部类与向上转型"></a> 内部类与向上转型</h1>
+<p>内部类——某个接口的实现——能够完全不可见，并且不可用，所得到的知识指向基类或接口的引用，所以能够很方便地隐藏实现细节。</p>
+<h2 id="private内部类"><a class="markdownIt-Anchor" href="#private内部类"></a> private内部类</h2>
 <ul>
-<li>寄存器：最快的存储区，位于处理器内部。Java中不能直接控制，也不能在程序中感受到寄存器存在的任何迹象（C和C++允许向编译器简易寄存器的分配方式）</li>
-<li>堆栈：速度仅次于寄存器，位于通用RAM（随机访问存储器），对象引用存储其中。</li>
-<li>堆：通用内存池，存放对象。</li>
-<li>常量存储：存放在程序代码内部；在嵌入式系统中，存在放在ROM（只读存储器）。</li>
-<li>非RAM存储：流对象和持久化对象。</li>
+<li>完全阻止依赖于类型的编码</li>
+<li>完全隐藏了实现细节</li>
+<li>无法访问不属于公共接口的方法</li>
 </ul>
-<h2 id="特例基本类型"><a class="markdownIt-Anchor" href="#特例基本类型"></a> 特例：基本类型</h2>
-<p>不用<strong>new</strong>创建变量，而是创建一个并非是引用的自动变量<br />
-这个变量直接存储“值”，并置于<strong>堆栈</strong>中，更加高效。</p>
-<p><img src="https://s1.ax1x.com/2020/03/24/8bzjnx.png" alt="" title="基本类型" /></p>
-<h2 id="高精度数字"><a class="markdownIt-Anchor" href="#高精度数字"></a> 高精度数字</h2>
-<p><strong>BigInteger</strong>和<strong>BigDecimal</strong>，大体属于“包装器类”的范畴，但没有对应的基本类型。<br />
-这两类变量需使用方法调用来代替运算符。</p>
-<pre><code>BIgInteger支持任意精度的整数
-BigDecimal支持任意精度的定点数。
-</code></pre>
-<h1 id="java中的数组"><a class="markdownIt-Anchor" href="#java中的数组"></a> Java中的数组</h1>
-<blockquote>
-<p><strong>基本数据类型的数组会被初始化</strong>。<br />
-Java的主要目标之一是<strong>安全性</strong>，数组会确保初始化，而且不能在它的范围之外被访问。由此的范围检查，换来了安全性和效率的提高，必须以<strong>每个数组上少量的内存开销及运行时的下标检查为代价的</strong>。（Java有时可以优化这些操作）</p>
-</blockquote>
-<h1 id="永远不需要销毁对象"><a class="markdownIt-Anchor" href="#永远不需要销毁对象"></a> 永远不需要销毁对象</h1>
-<p>基本类型变量的<font><strong>作用域(scope)</strong></font>由花括号的位置决定（C、C++、Java）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">12</span>;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">96</span>;<span class="comment">// Illegal</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>编译器将会报告变量x已经定义过。所以，在C和C++里将一个较大作用域的变量“隐藏”起来的做法，在Java里是不允许的。因为Java设计者认为这样做会导致程序混乱。</p>
-</blockquote>
-<hr />
-<p><strong>对象不具备生命周期</strong>，用new创建一个Java对象时，它能够存活于作用域之外。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    String  s = <span class="keyword">new</span> String(<span class="string">"a string"</span>);</span><br><span class="line">&#125; <span class="comment">// End of scope</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>其中引用s在作用域终点便消失了，但是s指向的String对象扔继续占据内存空间。<br />
-Java有一个垃圾回收器，用来监视用new创建的所有对象，并辨别那些不会再被引用的对象，随后，释放这些对象的内存空间，以便供其他新对象使用。这样做就消除了“<strong>内存泄漏</strong>”，这类问题是程序员忘记释放内存而产生的。</p>
-</blockquote>
-<h1 id="创建新的数据类型类"><a class="markdownIt-Anchor" href="#创建新的数据类型类"></a> 创建新的数据类型：类</h1>
-<p>属于<strong>基本数据类型的数据成员</strong>会被初始化。<br />
-<strong>非某个类</strong>的字段不会被初始。</p>
-<pre><code>（Java编译会因这类变量没有初始化而返回错误）
-</code></pre>
-<h1 id="构建一个java程序"><a class="markdownIt-Anchor" href="#构建一个java程序"></a> 构建一个Java程序</h1>
-<p><strong>static关键字</strong>可以满足两方面的需要</p>
+<h2 id="在方法和作用域内的内部类"><a class="markdownIt-Anchor" href="#在方法和作用域内的内部类"></a> 在方法和作用域内的内部类</h2>
+<p>可以在一个方法里面或者在任意的作用域内定义内部类，这么做有<strong>两个理由</strong>：</p>
 <ul>
-<li>只想为某特定域分配单一存储空间，而不去考虑究竟要创建多少对象，甚至根本就不创建任何对象。</li>
-<li>希望某个方法不与包含它的类的任何对象关联在一起。即没有创建对象，也能够调用这个方法。</li>
+<li>你实现了某类型的接口，于是可以创建并返回对其的引用。</li>
+<li>你要解决一个复杂的问题，想创建一个类来辅助你的解决方案，但是又不希望这个类是公共可用的。</li>
 </ul>
-<h1 id="注释和嵌入式文档"><a class="markdownIt-Anchor" href="#注释和嵌入式文档"></a> 注释和嵌入式文档</h1>
-<p>javadoc命令在“/**”注释中出现，结束于“*/”<br />
-javadoc只能为public、protected注释</p>
-<pre><code>可用-private进行标记，对private成员添加注释
-</code></pre>
-<p><strong>标签示例</strong></p>
+<h1 id="匿名内部类"><a class="markdownIt-Anchor" href="#匿名内部类"></a> 匿名内部类</h1>
+<p><font><strong>定义：</strong></font>返回值的生成，表示返回值的类的定义结合在一起</p>
 <ul>
-<li>@see：引用其他类</li>
-<li>{@link package.class#member}：使用行内label作为超链接文本</li>
-<li>{@docRoot}：产生到文档根目录的相对路径，用于文档树页面的显式超链接</li>
-<li>{@inheritDoc}：从当前类的最直接的基类中继承相关文档到当前文档注释中</li>
-<li>@version：显示包含在版本说明中的重要信息</li>
-<li>@author：显示你的姓名或任何合适的信息</li>
-<li>@since：允许指定程序代码最早使用的版本</li>
-<li>@param：方法的参数列表中的标识符 + 可延续数行的文本<br />
-<code>@param parameter-name description</code></li>
-<li>@return：描述返回值的含义</li>
-<li>@throws：一个异常类的无歧义的名字 + 可延续数行的文本<br />
-<code>@throws fully-qualified-class-name description</code></li>
+<li>通过new表达式，自动向上转型为接口的引用</li>
+<li>类是匿名的，没有名字</li>
 </ul>
-<h1 id="编码风格"><a class="markdownIt-Anchor" href="#编码风格"></a> 编码风格</h1>
-<p>采用“<strong>驼峰风格</strong>”：类名内部单词首字母大写，而其他内容标识符第一个字母小写。</p>
+<p>如果定义一个匿名内部类，并且希望它使用一个再起外部定义的对象，那么编译器会要求其参数引用是final的。<br />
+匿名内部类既可以扩展类，也可以实现接口，但是只能选其一，且最多只能实现一个接口。<br />
+可以在工厂方法中使用匿名内部类进行优化</p>
+<h1 id="嵌套类"><a class="markdownIt-Anchor" href="#嵌套类"></a> 嵌套类</h1>
+<p>嵌套类：<strong>内部类声明为static</strong>，此时内部类对象与外围类对象之间没有联系。<br />
+因为普通的内部类对象隐式地保存了一个引用，指向创建它的外围类对象，而嵌套类意味着：</p>
+<ol>
+<li>要创建嵌套类的对象，不需要其外围类的对象。</li>
+<li>不能从嵌套类的对象中访问非静态的外围类对象。</li>
+</ol>
+<p>正常情况下不能再接口内部放置任何代码，但嵌套类可以作为接口的一部分，放置在接口中的任何类都自动地是public和static的，甚至可以在内部类中实现其外围接口，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ClassInInterface</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">howdy</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">ClassInInterface</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">howdy</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"Howdy!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">            <span class="keyword">new</span> Test().howdy();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果个类都写一个main()方法，用来测试这个类，这样的做法必须带着那些已编译过的额外代码，于是可以使用嵌套类来放置测试代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBed</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"f()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Tester</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            TestBed t = <span class="keyword">new</span> TestBed();</span><br><span class="line">            t.f();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="为什么需要内部类"><a class="markdownIt-Anchor" href="#为什么需要内部类"></a> 为什么需要内部类</h1>
+<p>使用内部类的<strong>原因</strong>:</p>
+<ul>
+<li><strong>入口</strong>
+<ol>
+<li>内部类对象可以访问外围类对象的所有成员</li>
+<li>内部类提供了进入外围类的窗口</li>
+</ol>
+</li>
+<li><strong>多重继承</strong>
+<ol>
+<li>每个内部类都能独立地继承自一个（接口的）实现</li>
+<li>外围类继承关系，对内部类无影响</li>
+<li>内部类允许继承多个非接口类型</li>
+</ol>
+</li>
+<li><strong>闭包与回调</strong>
+<ol>
+<li>对象携带信息，在某一时刻调用初始对象</li>
+</ol>
+</li>
+<li><strong>控制框架</strong>
+<ol>
+<li>图形用户接口GUI</li>
+<li>事件驱动系统</li>
+</ol>
+</li>
+</ul>
+<h1 id="局部内部类"><a class="markdownIt-Anchor" href="#局部内部类"></a> 局部内部类</h1>
+<p>局部内部类不能有访问说明符，它不是外围类的一部分，但是它可以访问当前代码内的常量以及次外围类的所有成员。<br />
+<strong>使用局部内部类而不适用匿名内部类的原因</strong>：</p>
+<ol>
+<li>需要一个已命名的构造器，或者需要重载构造器，而匿名内部类只能用于实例初始化</li>
+<li>需要不止一个该内部类的对象</li>
+</ol>
 
     </div>
 
@@ -350,7 +344,7 @@ javadoc只能为public、protected注释</p>
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/03/24/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0(%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1)/" title="Java编程思想——第二章(一切都是对象)">http://yoursite.com/2020/03/24/Java编程思想——第二章(一切都是对象)/</a>
+    <a href="http://yoursite.com/2020/04/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E7%AB%A0(%E5%86%85%E9%83%A8%E7%B1%BB)/" title="Java编程思想——第十章(内部类)">http://yoursite.com/2020/04/22/Java编程思想——第十章(内部类)/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -372,13 +366,10 @@ javadoc只能为public、protected注释</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/21/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0(%E5%AF%B9%E8%B1%A1%E5%AF%BC%E8%AE%BA)/" rel="prev" title="Java编程思想——第一章(对象导论)">
-      <i class="fa fa-chevron-left"></i> Java编程思想——第一章(对象导论)
+    <a href="/2020/04/20/(Python)%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B/" rel="prev" title="(Python)决策树模型">
+      <i class="fa fa-chevron-left"></i> (Python)决策树模型
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/25/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0(%E6%93%8D%E4%BD%9C%E7%AC%A6)/" rel="next" title="Java编程思想——第三章(操作符)">
-      Java编程思想——第三章(操作符) <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -438,7 +429,7 @@ javadoc只能为public、protected注释</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用引用操作对象"><span class="nav-number">1.</span> <span class="nav-text"> 用引用操作对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#必须有你创建所有对象"><span class="nav-number">2.</span> <span class="nav-text"> 必须有你创建所有对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据存储区域"><span class="nav-number">2.1.</span> <span class="nav-text"> 数据存储区域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特例基本类型"><span class="nav-number">2.2.</span> <span class="nav-text"> 特例：基本类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高精度数字"><span class="nav-number">2.3.</span> <span class="nav-text"> 高精度数字</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java中的数组"><span class="nav-number">3.</span> <span class="nav-text"> Java中的数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#永远不需要销毁对象"><span class="nav-number">4.</span> <span class="nav-text"> 永远不需要销毁对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建新的数据类型类"><span class="nav-number">5.</span> <span class="nav-text"> 创建新的数据类型：类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建一个java程序"><span class="nav-number">6.</span> <span class="nav-text"> 构建一个Java程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释和嵌入式文档"><span class="nav-number">7.</span> <span class="nav-text"> 注释和嵌入式文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编码风格"><span class="nav-number">8.</span> <span class="nav-text"> 编码风格</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建内部类"><span class="nav-number">1.</span> <span class="nav-text"> 创建内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接到外部类"><span class="nav-number">2.</span> <span class="nav-text"> 链接到外部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用this与new"><span class="nav-number">3.</span> <span class="nav-text"> 使用.this与.new</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内部类与向上转型"><span class="nav-number">4.</span> <span class="nav-text"> 内部类与向上转型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#private内部类"><span class="nav-number">4.1.</span> <span class="nav-text"> private内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在方法和作用域内的内部类"><span class="nav-number">4.2.</span> <span class="nav-text"> 在方法和作用域内的内部类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名内部类"><span class="nav-number">5.</span> <span class="nav-text"> 匿名内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套类"><span class="nav-number">6.</span> <span class="nav-text"> 嵌套类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么需要内部类"><span class="nav-number">7.</span> <span class="nav-text"> 为什么需要内部类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部内部类"><span class="nav-number">8.</span> <span class="nav-text"> 局部内部类</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
